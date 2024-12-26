@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 
 public class AsciiCode {
     private static int sum;
+    private String privateValue;
+
+    public String getPrivateValue() {
+        return privateValue;
+    }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

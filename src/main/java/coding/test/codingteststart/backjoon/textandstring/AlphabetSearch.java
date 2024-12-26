@@ -1,41 +1,25 @@
 package coding.test.codingteststart.backjoon.textandstring;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class AlphabetSearch {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String input = br.readLine();
-        char[] charInput = input.toCharArray();
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        String aa = "abcdefghijklmnopqrstuvwxyz";
 
-        List<Integer> list = new ArrayList<>();
-        //baekjoon
-        // 65 - 90 - > 대문자
-        // 97 - 122 - > 소문자
-        for (int i = 97; i <= 122 ; i++) {
-
-            for (int j = 0; j < charInput.length; j++) {
-                char c = charInput[j];
-
-                int i1 = i - c;
-                System.out.println("print = > " + i1);
-
-                // input 에 포함되지 않으면 -1
-                    list.add(i1);
+        for(char c : aa.toCharArray()){
+            if(input.contains(String.valueOf(c))) {
+                System.out.print(input.indexOf(c) + " ");
+            }else {
+                System.out.print("-1 ");
             }
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println("list = " + list.get(i) + " ");
-        }
-
-
+        sc.close();
     }
+
 }
